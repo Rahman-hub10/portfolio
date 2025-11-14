@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website </title>
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Project stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Playfair Display (headings) + Inter (body) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+    <a href="#" class="logo">AR</a>
+
+        <nav>
+                <a href="#" id="nav-home" class="active">Home</a>
+                <a href="#" id="nav-experience">Experience</a>
+                <a href="#" id="nav-skills">Skills</a> 
+                <a href="#" id="nav-education">Education</a> 
+                <a href="#contact" id="nav-contact">Contact</a> 
+                
+            </nav>
+    </header>
+    <section class="home">
+        <div class="home-img">
+            <div class="img-note">ABDUL RAHMAN</div>
+            <img src="main.jpg" alt="">
+        </div>
+        <div class="home-content">
+            <h1><span class="greet">Hi,</span> <span class="small-name">It's Rahman S</span></h1>
+            <h3 class="typing-text">I'm a <span id="role" class="role">Software Engineer</span></h3>
+            <p>A passionate Software Developer skilled in Python, web technologies, and cloud computing. I love creating smart, scalable solutions and exploring how AI can make technology more human. My goal is to turn ideas into impactful digital experiences that inspire and simplify everyday life.</p>
+            <div class="social-icons">
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <!-- Naukri link (replaced Twitter). Replace href with your profile URL if you have one -->
+                <a href="https://www.naukri.com/" target="_blank" rel="noopener noreferrer" aria-label="Naukri"><i class="fa-solid fa-briefcase"></i></a>
+                <a href="http://www.linkedin.com/in/abdulrahmans5" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com/Rahman-hub10" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            </div>
+        <button id="hire-btn" class="btn">Hire Me</button>
+        </div>
+    </section>
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <h2>Experience</h2>
+            <div class="experience-grid">
+                <div class="exp-card">
+                    <h4>Software Development Intern - K-Teq Solution</h4>
+                    <p class="sub">March 2024 - May 2024</p>
+                    <p>Focused on backend engineering and platform reliability. Designed and implemented RESTful services, optimized database queries, and introduced automated tests to improve system stability. Collaborated with frontend and DevOps teams to deliver features in Agile sprints.</p>
+                    <p>Key contributions: reduced API latency through query optimization and basic caching, introduced unit and integration tests, and helped automate parts of the CI pipeline.</p>
+                    <p class="techs">Technologies: <span class="tag">Node.js</span> <span class="tag">Express</span> <span class="tag">PostgreSQL</span> <span class="tag">Docker</span> <span class="tag">Jest</span> <span class="tag">Git</span></p>
+                </div>
+                <div class="exp-card">
+                    <h4>Full Stack Intern - Techedge IT Solution</h4>
+                    <p class="sub">May 2025 - Jul 2025</p>
+                    <p>Built responsive front-end components and integrated them with backend APIs. Implemented end-to-end features including user authentication, database integration, and REST API endpoints. Participated in code reviews and sprint planning to deliver high-quality features.
+                    </p>
+                    <p>Key contributions: delivered two customer-facing features, improved frontend performance, and implemented role-based authentication for a client module.</p>
+                    <p class="techs">Technologies: <span class="tag">React</span> <span class="tag">Redux</span> <span class="tag">Node.js</span> <span class="tag">Express</span> <span class="tag">MongoDB</span> <span class="tag">Bootstrap</span> <span class="tag">Git</span></p>
+                </div>
+                <div class="exp-card">
+                    <h4>Full Stack Course (Ongoing) - Besant Technologies</h4>
+                    <p class="sub">Ongoing</p>
+                    <p>Enrolled in a Full Stack development program covering both front-end and back-end technologies, building practical projects to strengthen web development skills.</p>
+                    <p class="techs">Technologies: <span class="tag">Python</span> <span class="tag">ML</span> <span class="tag">HTML</span> <span class="tag">CSS</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hire Me Modal -->
+    <div id="modal-backdrop" class="modal-backdrop" aria-hidden="true">
+        <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button id="close-modal" class="close-modal" aria-label="Close">✕</button>
+            <h3 id="modal-title">Let's work together</h3>
+            <p class="lead">Pick an option — I'll respond quickly. You can also send a quick message right here.</p>
+
+            <div class="modal-grid">
+                <div id="opt-email" class="option-card">
+                    <h4>Quick Email</h4>
+                    <p>Open your email client with a pre-filled message to me.</p>
+                </div>
+                <div id="opt-call" class="option-card">
+                    <h4>Schedule a Call</h4>
+                    <p>Open the dialer or copy my phone number to schedule a call.</p>
+                </div>
+            </div>
+
+            <form id="quick-message" class="" onsubmit="return false;">
+                <input id="msg-name" type="text" placeholder="Your name" required />
+                <input id="msg-email" type="email" placeholder="Your email" required />
+                <textarea id="msg-text" rows="4" placeholder="Short message (what project / timeline?)" required></textarea>
+                <div class="actions">
+                    <button id="send-msg" class="btn" type="submit">Send Message</button>
+                    <button id="copy-number" class="btn" type="button">Copy My Number</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Toast container -->
+    <div id="toast" aria-live="polite" aria-atomic="true" style="position:fixed; right:20px; bottom:20px; z-index:400;"></div>
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2>Skills</h2>
+            <p class="lead">Technologies I work with — practical experience and continuous learning.</p>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h4>Cloud Computing</h4>
+                    <div class="skill-bar"><div class="skill-fill" data-fill="80"></div></div>
+                </div>
+                <div class="skill-card">
+                    <h4>HTML</h4>
+                    <div class="skill-bar"><div class="skill-fill" data-fill="90"></div></div>
+                </div>
+                <div class="skill-card">
+                    <h4>CSS</h4>
+                    <div class="skill-bar"><div class="skill-fill" data-fill="85"></div></div>
+                </div>
+                <div class="skill-card">
+                    <h4>Python</h4>
+                    <div class="skill-bar"><div class="skill-fill" data-fill="75"></div></div>
+                </div>
+                <div class="skill-card">
+                    <h4>SQL</h4>
+                    <div class="skill-bar"><div class="skill-fill" data-fill="65"></div></div>
+                </div>
+                <div class="skill-card">
+                    <h4>Data Analysis</h4>
+                    <div class="skill-bar"><div class="skill-fill" data-fill="60"></div></div>
+                </div>
+                <div class="skill-card">
+                    <h4>Web Technologies</h4>
+                    <div class="skill-bar"><div class="skill-fill" data-fill="88"></div></div>
+                </div>
+                <div class="skill-card">
+                    <h4>AI</h4>
+                    <div class="skill-bar"><div class="skill-fill" data-fill="60"></div></div>
+                </div>
+                <div class="skill-card">
+                    <h4>ML</h4>
+                    <div class="skill-bar"><div class="skill-fill" data-fill="55"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Education Section -->
+    <section id="education" class="education-section">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="education-grid">
+                <div class="education-card">
+                    <h4>Sai Ram Matric Hr Sec School</h4>
+                    <p class="sub">School — 2018</p>
+                    <p>Completed higher secondary education at Sai Ram Matric Higher Secondary School.</p>
+                </div>
+                <div class="education-card">
+                    <h4>VDP Polytechnic College</h4>
+                    <p class="sub">Diploma in Electrical and Electronics Engineering (DEEE) — 2019 - 2022</p>
+                    <p>Completed a Diploma in Electrical and Electronics Engineering (DEEE).</p>
+                </div>
+                <div class="education-card">
+                    <h4>Sri Sivasubramaniya Nadar College</h4>
+                    <p class="sub">BE Biomedical — Passed out 2025</p>
+                    <p>Passed out in 2025 with a BE in Biomedical Engineering.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Contact</h2>
+                    <p class="lead">I'm open to opportunities and freelance work — feel free to reach out.</p>
+
+            <div class="contact-card">
+                <div class="contact-row">
+                    <div class="contact-block">
+                        <h4><i class="fa-solid fa-phone" style="color:var(--accent); margin-right:8px;"></i>Phone</h4>
+                        <p id="contact-phone" class="contact-value">+91 97902 97339</p>
+                        <div class="contact-actions">
+                            <a id="tel-link" href="tel:9790297339" class="btn">Call</a>
+                            <button id="copy-phone" class="btn">Copy</button>
+                        </div>
+                    </div>
+
+                    <div class="contact-block">
+                        <h4><i class="fa-solid fa-envelope" style="color:var(--accent); margin-right:8px;"></i>Email</h4>
+                        <p id="contact-email" class="contact-value">rahman51020@gmail.com</p>
+                        <div class="contact-actions">
+                            <a id="email-link" href="mailto:rahman51020@gmail.com" class="btn">Email</a>
+                            <button id="copy-email" class="btn">Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Resume section removed by request -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Bubble effect on social icon click (keeps existing behavior)
+            const icons = document.querySelectorAll('.social-icons a');
+            icons.forEach((a) => {
+                a.addEventListener('click', (e) => {
+                    // If the anchor points to an external URL or uses target="_blank",
+                    // open it immediately and don't block navigation.
+                    const href = a.getAttribute('href') || a.href || '';
+                    const isExternal = href.startsWith('http') || a.target === '_blank';
+                    if (isExternal) {
+                        // let the browser open the link in a new tab/window
+                        window.open(href, '_blank', 'noopener');
+                        return;
+                    }
+
+                    // Otherwise prevent default and show bubble effect (internal action)
+                    e.preventDefault();
+                    const bubble = document.createElement('span');
+                    bubble.className = 'bubble';
+                    a.appendChild(bubble);
+                    bubble.addEventListener('animationend', () => bubble.remove());
+                });
+            });
+
+            // Jiggle social icons when Home or Experience are clicked
+            const socials = document.querySelector('.social-icons');
+            function jiggleSocials() {
+                if (!socials) return;
+                socials.classList.add('jiggle');
+                // remove class after animation completes (~700ms)
+                setTimeout(() => socials.classList.remove('jiggle'), 800);
+            }
+
+            const navHome = document.getElementById('nav-home');
+            const navExp = document.getElementById('nav-experience');
+            const experienceSection = document.getElementById('experience');
+            if (navHome) navHome.addEventListener('click', (e) => { e.preventDefault(); jiggleSocials(); });
+            if (navExp) navExp.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (experienceSection) experienceSection.scrollIntoView({ behavior: 'smooth' });
+                jiggleSocials();
+            });
+
+            // Smooth scroll to skills and animate bars
+            const navSkills = document.getElementById('nav-skills');
+            const skillsSection = document.getElementById('skills');
+            if (navSkills && skillsSection) {
+                navSkills.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    skillsSection.scrollIntoView({ behavior: 'smooth' });
+                    animateSkillBars();
+                });
+            }
+
+            // Education nav smooth scroll
+            const navEducation = document.getElementById('nav-education');
+            const educationSection = document.getElementById('education');
+            if (navEducation && educationSection) {
+                navEducation.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    educationSection.scrollIntoView({ behavior: 'smooth' });
+                });
+            }
+
+            // Contact fetch + smooth scroll
+            const navContact = document.getElementById('nav-contact');
+            const contactSection = document.getElementById('contact');
+            if (navContact && contactSection) {
+                navContact.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                });
+            }
+
+            async function fetchContact() {
+                try {
+                    const res = await fetch('/api/contact');
+                    if (!res.ok) throw new Error('Network response was not ok');
+                    const data = await res.json();
+                    const phoneEl = document.getElementById('contact-phone');
+                    const emailEl = document.getElementById('contact-email');
+                    const tel = document.getElementById('tel-link');
+                    const mail = document.getElementById('email-link');
+                    if (phoneEl) phoneEl.textContent = (data.phone && data.phone.startsWith('+')) ? data.phone : formatPhone(data.phone);
+                    if (emailEl) emailEl.textContent = data.email;
+                    if (tel) tel.href = `tel:${data.phone}`;
+                    if (mail) mail.href = `mailto:${data.email}`;
+                } catch (err) {
+                    // keep the static fallback values already present in the markup
+                    console.error('Failed to fetch contact:', err);
+                }
+            }
+
+            // Format phone number for display (simple, adds +91 if missing)
+            function formatPhone(raw) {
+                if (!raw) return '';
+                if (raw.startsWith('+')) return raw;
+                // naive formatting: assume it's an Indian 10-digit number
+                const digits = raw.replace(/\D/g, '');
+                if (digits.length === 10) return '+91 ' + digits.replace(/(\d{5})(\d{5})/, '$1 $2');
+                return raw;
+            }
+
+            // Try to fetch contact on load
+            fetchContact();
+
+            // Copy-to-clipboard handlers
+            function copyText(text) {
+                if (!navigator.clipboard) {
+                    const ta = document.createElement('textarea');
+                    ta.value = text;
+                    document.body.appendChild(ta);
+                    ta.select();
+                    document.execCommand('copy');
+                    ta.remove();
+                    return Promise.resolve();
+                }
+                return navigator.clipboard.writeText(text);
+            }
+
+            const copyPhoneBtn = document.getElementById('copy-phone');
+            const copyEmailBtn = document.getElementById('copy-email');
+            const phoneValueEl = document.getElementById('contact-phone');
+            const emailValueEl = document.getElementById('contact-email');
+            if (copyPhoneBtn && phoneValueEl) copyPhoneBtn.addEventListener('click', () => {
+                copyText(phoneValueEl.textContent.trim()).then(() => {
+                    copyPhoneBtn.textContent = 'Copied!';
+                    setTimeout(() => copyPhoneBtn.textContent = 'Copy', 1500);
+                }).catch(() => showToast('Could not copy phone'));
+            });
+            if (copyEmailBtn && emailValueEl) copyEmailBtn.addEventListener('click', () => {
+                copyText(emailValueEl.textContent.trim()).then(() => {
+                    copyEmailBtn.textContent = 'Copied!';
+                    setTimeout(() => copyEmailBtn.textContent = 'Copy', 1500);
+                }).catch(() => showToast('Could not copy email'));
+            });
+
+            function animateSkillBars() {
+                const fills = document.querySelectorAll('.skill-fill');
+                fills.forEach(f => {
+                    const value = f.dataset.fill || 0;
+                    f.style.width = value + '%';
+                });
+            }
+
+            // Animate when section enters viewport
+            if (skillsSection) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            animateSkillBars();
+                            observer.disconnect();
+                        }
+                    });
+                }, { threshold: 0.25 });
+                observer.observe(skillsSection);
+            }
+
+            // Hire Me modal behavior
+            const hireBtn = document.getElementById('hire-btn');
+            const modalBackdrop = document.getElementById('modal-backdrop');
+            const modal = document.getElementById('modal');
+            const closeModal = document.getElementById('close-modal');
+            const optEmail = document.getElementById('opt-email');
+            const optCall = document.getElementById('opt-call');
+            const sendMsgBtn = document.getElementById('send-msg');
+            const copyNumberBtn = document.getElementById('copy-number');
+
+            function openModal() {
+                modalBackdrop.style.display = 'flex';
+                setTimeout(() => modal.classList.add('show'), 20);
+                modalBackdrop.setAttribute('aria-hidden', 'false');
+            }
+            function closeModalFn() {
+                modal.classList.remove('show');
+                setTimeout(() => modalBackdrop.style.display = 'none', 200);
+                modalBackdrop.setAttribute('aria-hidden', 'true');
+            }
+
+            if (hireBtn) hireBtn.addEventListener('click', (e) => { e.preventDefault(); openModal(); });
+            if (closeModal) closeModal.addEventListener('click', closeModalFn);
+            modalBackdrop.addEventListener('click', (e) => { if (e.target === modalBackdrop) closeModalFn(); });
+
+            // Toast helper
+            function showToast(message, timeout = 3000) {
+                const container = document.getElementById('toast');
+                if (!container) return;
+                const el = document.createElement('div');
+                el.className = 'toast';
+                el.textContent = message;
+                container.appendChild(el);
+                setTimeout(() => {
+                    el.style.opacity = '0';
+                    setTimeout(() => el.remove(), 300);
+                }, timeout);
+            }
+
+            // Option actions
+            optEmail.addEventListener('click', () => {
+                // open mail client with subject and body
+                const subject = encodeURIComponent('Opportunity / Project Inquiry');
+                const body = encodeURIComponent('Hi Rahman,\n\nI am interested in discussing a project with you.\n\nRegards,');
+                window.location.href = `mailto:rahman51020@gmail.com?subject=${subject}&body=${body}`;
+            });
+
+            optCall.addEventListener('click', () => {
+                // try to open tel: or copy number
+                const telLink = document.getElementById('tel-link');
+                if (telLink && telLink.href) {
+                    // On desktops this may not do much; also copy to clipboard for convenience
+                    copyText(telLink.href.replace('tel:', '')).then(() => {
+                        showToast('Phone number copied to clipboard');
+                    }).catch(() => showToast('Could not copy phone'));
+                }
+            });
+
+            sendMsgBtn.addEventListener('click', () => {
+                const name = document.getElementById('msg-name').value.trim();
+                const email = document.getElementById('msg-email').value.trim();
+                const text = document.getElementById('msg-text').value.trim();
+                if (!name || !email || !text) { showToast('Please fill all fields.'); return; }
+                const subject = encodeURIComponent(`Website message from ${name}`);
+                const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${text}`);
+                window.location.href = `mailto:rahman51020@gmail.com?subject=${subject}&body=${body}`;
+            });
+
+            copyNumberBtn.addEventListener('click', () => {
+                const phone = document.getElementById('contact-phone').textContent.trim();
+                copyText(phone);
+                copyNumberBtn.textContent = 'Copied!';
+                setTimeout(() => copyNumberBtn.textContent = 'Copy My Number', 1500);
+            });
+        });
+        </script>
+</body>
+</html>

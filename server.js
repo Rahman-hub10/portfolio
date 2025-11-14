@@ -8,7 +8,7 @@ const CONTACT = {
     email: "rahman51020@gmail.com"
 };
 
-// Serve static files (HTML, CSS, JS, images)
+// Serve static files
 app.use(express.static(__dirname));
 
 // Homepage route
@@ -21,7 +21,7 @@ app.get("/api/contact", (req, res) => {
     res.json(CONTACT);
 });
 
-// Render needs this — DO NOT REMOVE
+// Render PORT
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {

@@ -1,29 +1,29 @@
-const express = require('express');
-const path = require('path');
-
+const express = require("express");
+const path = require("path");
 const app = express();
-const PORT = process.env.PORT || 3000;
 
-// Your contact details API (this is fine)
+// Contact details
 const CONTACT = {
-    phone: '9790297339',
-    email: 'rahman51020@gmail.com'
+    phone: "9790297339",
+    email: "rahman51020@gmail.com"
 };
 
-// Serve static files (HTML, CSS, images, JS)
-app.use(express.static(path.join(__dirname)));
+// Serve static files (HTML, CSS, JS, images)
+app.use(express.static(__dirname));
 
-// Serve your index.html file when someone visits your website
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+// Homepage route
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "index.html"));
 });
 
-// Contact API endpoint
-app.get('/api/contact', (req, res) => {
+// Contact API
+app.get("/api/contact", (req, res) => {
     res.json(CONTACT);
 });
 
-// Start server
+// Render needs this — DO NOT REMOVE
+const PORT = process.env.PORT || 3000;
+
 app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+    console.log(`Server running on port ${PORT}`);
 });
